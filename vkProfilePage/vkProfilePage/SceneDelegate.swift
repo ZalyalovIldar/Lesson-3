@@ -1,9 +1,9 @@
 //
 //  SceneDelegate.swift
-//  TableViewLesson
+//  vkProfilePage
 //
-//  Created by Ильдар Залялов on 02/10/2019.
-//  Copyright © 2019 Ildar Zalyalov. All rights reserved.
+//  Created by Никита Лужбин on 03/10/2019.
+//  Copyright © 2019 Никита. All rights reserved.
 //
 
 import UIKit
