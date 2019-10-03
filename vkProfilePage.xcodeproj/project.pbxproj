@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		42B57C6A23461FDA00635A45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C6923461FDA00635A45 /* AppDelegate.swift */; };
 		42B57C6C23461FDA00635A45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C6B23461FDA00635A45 /* SceneDelegate.swift */; };
-		42B57C6E23461FDA00635A45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C6D23461FDA00635A45 /* ViewController.swift */; };
 		42B57C7123461FDA00635A45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B57C6F23461FDA00635A45 /* Main.storyboard */; };
 		42B57C7323461FDC00635A45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B57C7223461FDC00635A45 /* Assets.xcassets */; };
 		42B57C7623461FDC00635A45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B57C7423461FDC00635A45 /* LaunchScreen.storyboard */; };
+		42B57C7E2346271E00635A45 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C7D2346271E00635A45 /* PostsTableViewController.swift */; };
+		42B57C80234627DA00635A45 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C7F234627DA00635A45 /* Post.swift */; };
+		42B57C85234628B000635A45 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C83234628B000635A45 /* UserInfoTableViewCell.swift */; };
+		42B57C86234628B000635A45 /* UserInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B57C84234628B000635A45 /* UserInfoTableViewCell.xib */; };
+		42B57C8A2346290400635A45 /* AddPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C882346290400635A45 /* AddPostTableViewCell.swift */; };
+		42B57C8B2346290400635A45 /* AddPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B57C892346290400635A45 /* AddPostTableViewCell.xib */; };
+		42B57C8E2346291500635A45 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C8C2346291500635A45 /* PostTableViewCell.swift */; };
+		42B57C8F2346291500635A45 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B57C8D2346291500635A45 /* PostTableViewCell.xib */; };
+		42B57C9223462A4300635A45 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C9023462A4300635A45 /* PhotosTableViewCell.swift */; };
+		42B57C9323462A4300635A45 /* PhotosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B57C9123462A4300635A45 /* PhotosTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		42B57C6623461FDA00635A45 /* vkProfilePage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkProfilePage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B57C6923461FDA00635A45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42B57C6B23461FDA00635A45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		42B57C6D23461FDA00635A45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42B57C7023461FDA00635A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42B57C7223461FDC00635A45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42B57C7523461FDC00635A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42B57C7723461FDC00635A45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42B57C7D2346271E00635A45 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		42B57C7F234627DA00635A45 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		42B57C83234628B000635A45 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		42B57C84234628B000635A45 /* UserInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoTableViewCell.xib; sourceTree = "<group>"; };
+		42B57C882346290400635A45 /* AddPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostTableViewCell.swift; sourceTree = "<group>"; };
+		42B57C892346290400635A45 /* AddPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPostTableViewCell.xib; sourceTree = "<group>"; };
+		42B57C8C2346291500635A45 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		42B57C8D2346291500635A45 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		42B57C9023462A4300635A45 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
+		42B57C9123462A4300635A45 /* PhotosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,48 @@
 		42B57C6823461FDA00635A45 /* vkProfilePage */ = {
 			isa = PBXGroup;
 			children = (
-				42B57C6923461FDA00635A45 /* AppDelegate.swift */,
-				42B57C6B23461FDA00635A45 /* SceneDelegate.swift */,
-				42B57C6D23461FDA00635A45 /* ViewController.swift */,
 				42B57C6F23461FDA00635A45 /* Main.storyboard */,
+				42B57C812346282400635A45 /* Controllers */,
+				42B57C822346282B00635A45 /* Models */,
+				42B57C87234628CF00635A45 /* Views */,
 				42B57C7223461FDC00635A45 /* Assets.xcassets */,
 				42B57C7423461FDC00635A45 /* LaunchScreen.storyboard */,
 				42B57C7723461FDC00635A45 /* Info.plist */,
+				42B57C6923461FDA00635A45 /* AppDelegate.swift */,
+				42B57C6B23461FDA00635A45 /* SceneDelegate.swift */,
 			);
 			path = vkProfilePage;
+			sourceTree = "<group>";
+		};
+		42B57C812346282400635A45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42B57C7D2346271E00635A45 /* PostsTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		42B57C822346282B00635A45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				42B57C7F234627DA00635A45 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		42B57C87234628CF00635A45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				42B57C83234628B000635A45 /* UserInfoTableViewCell.swift */,
+				42B57C84234628B000635A45 /* UserInfoTableViewCell.xib */,
+				42B57C9023462A4300635A45 /* PhotosTableViewCell.swift */,
+				42B57C9123462A4300635A45 /* PhotosTableViewCell.xib */,
+				42B57C882346290400635A45 /* AddPostTableViewCell.swift */,
+				42B57C892346290400635A45 /* AddPostTableViewCell.xib */,
+				42B57C8C2346291500635A45 /* PostTableViewCell.swift */,
+				42B57C8D2346291500635A45 /* PostTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +176,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B57C86234628B000635A45 /* UserInfoTableViewCell.xib in Resources */,
 				42B57C7623461FDC00635A45 /* LaunchScreen.storyboard in Resources */,
 				42B57C7323461FDC00635A45 /* Assets.xcassets in Resources */,
+				42B57C8F2346291500635A45 /* PostTableViewCell.xib in Resources */,
 				42B57C7123461FDA00635A45 /* Main.storyboard in Resources */,
+				42B57C8B2346290400635A45 /* AddPostTableViewCell.xib in Resources */,
+				42B57C9323462A4300635A45 /* PhotosTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42B57C6E23461FDA00635A45 /* ViewController.swift in Sources */,
+				42B57C8E2346291500635A45 /* PostTableViewCell.swift in Sources */,
+				42B57C85234628B000635A45 /* UserInfoTableViewCell.swift in Sources */,
+				42B57C7E2346271E00635A45 /* PostsTableViewController.swift in Sources */,
 				42B57C6A23461FDA00635A45 /* AppDelegate.swift in Sources */,
+				42B57C9223462A4300635A45 /* PhotosTableViewCell.swift in Sources */,
 				42B57C6C23461FDA00635A45 /* SceneDelegate.swift in Sources */,
+				42B57C80234627DA00635A45 /* Post.swift in Sources */,
+				42B57C8A2346290400635A45 /* AddPostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
