@@ -105,6 +105,8 @@ class FullPostViewController: UIViewController, PostEditDelegate {
         self.post = new
         
         if let text = new.text {
+            
+            postTextLabel.isHidden = false
             postTextLabel.text = text
         }
         else {
