@@ -11,6 +11,7 @@ import Foundation
 class PostProvider {
     
     class func getPosts() -> [Post] {
+        
         var posts = [Post]()
         
         posts.append(Post(text: "Short text without an image", imageName: nil))

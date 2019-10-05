@@ -9,6 +9,7 @@
 import Foundation
 
 struct Post {
+    
     static var postCount = 0
     
     let id: Int

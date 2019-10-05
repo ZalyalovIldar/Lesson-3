@@ -55,28 +55,34 @@ class FullPostViewController: UIViewController, PostEditDelegate {
     }
     
     func showEditActionSheet() {
+        
         let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
         let cancelActionButton = UIAlertAction(title: "Отмена", style: .cancel)
+        
         actionSheetController.addAction(cancelActionButton)
 
         let saveActionButton = UIAlertAction(title: "Редактировать", style: .default) { action -> Void in
             self.performSegue(withIdentifier: self.editingViewSegueId, sender: self)
         }
+        
         actionSheetController.addAction(saveActionButton)
 
         let deleteActionButton = UIAlertAction(title: "Удалить", style: .destructive) { action -> Void in
             self.showDeletionActionSheet()
         }
+        
         actionSheetController.addAction(deleteActionButton)
         
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
     func showDeletionActionSheet() {
+        
         let actionSheetController = UIAlertController(title: "Удаление поста", message: "Вы уверены, что хотите продолжить?", preferredStyle: .actionSheet)
 
         let cancelActionButton = UIAlertAction(title: "Отмена", style: .cancel)
+        
         actionSheetController.addAction(cancelActionButton)
 
         let deleteActionButton = UIAlertAction(title: "Удалить", style: .destructive) { action -> Void in
@@ -84,6 +90,7 @@ class FullPostViewController: UIViewController, PostEditDelegate {
             self.postDeleteDelegate?.deleteButtonPressed(on: self.post)
             self.navigationController?.popViewController(animated: true)
         }
+        
         actionSheetController.addAction(deleteActionButton)
         
         self.present(actionSheetController, animated: true, completion: nil)

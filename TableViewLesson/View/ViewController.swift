@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let fullPostSegueId = "showFullPostSegue"
         
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         mainTableView.delegate = self
@@ -38,14 +39,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cellSpacingHeight
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return staticCellsCount + posts.count
-    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
+        
         return headerView
     }
     
@@ -60,25 +58,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
+            
             let cell = mainTableView.dequeueReusableCell(withIdentifier: PageHeaderCell.nibName, for: indexPath)
+            
             return cell
         }
         else {
+            
             let cell = mainTableView.dequeueReusableCell(withIdentifier: TextAndImageCell.nibName, for: indexPath) as! TextAndImageCell
             
             cell.configure(with: posts[indexPath.section - 1])
+            
             return cell
         }
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return staticCellsCount + posts.count
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == fullPostSegueId, let post = sender as? Post {
+            
             let destVC = segue.destination as! FullPostViewController
             destVC.configure(with: post, postDeleteDelegate: self, postEditDelegate: self)
         }
     }
     
     func saveButtonPressed(on post: Post, new: Post)  {
+        
         if let postIndex = posts.firstIndex(where: { $0.id == post.id }) {
             
             posts.remove(at: postIndex)
@@ -88,6 +97,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func deleteButtonPressed(on post: Post) {
+        
         if let postIndex = posts.firstIndex(where: { $0.id == post.id }) {
             
             posts.remove(at: postIndex)
@@ -95,4 +105,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 }
-

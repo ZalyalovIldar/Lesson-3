@@ -9,10 +9,12 @@
 import Foundation
 
 protocol PostDeleteDelegate: AnyObject {
+    
     func deleteButtonPressed(on post: Post)
 }
 
 protocol PostEditDelegate: AnyObject {
+    
     func saveButtonPressed(on post: Post, new: Post)
 }
 

@@ -34,6 +34,7 @@ class PostEditingViewController: UIViewController {
     @IBAction func cancelEditingButtonPressed(_ sender: Any) {
         dismiss(animated: true)
     }
+    
     @IBAction func saveButtonPressed(_ sender: Any) {
         
         let newText: String? = postTextView.text.isEmpty ? nil : postTextView.text
