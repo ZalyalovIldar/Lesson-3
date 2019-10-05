@@ -9,7 +9,37 @@ class DetailedPostTableViewController: UITableViewController {
         
         setupTableView()
     }
-
+    
+    @IBAction func optionsButtonPressed(_ sender: Any) {
+        presentOptionsAlertController()
+    }
+    
+    func presentOptionsAlertController() {
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let editAction = UIAlertAction(title: "Edit", style: .default) { (UIAlertAction) in
+        }
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (UIAlertAction) in
+            self.presentDeletionConfirmationAlertController()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(editAction)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentDeletionConfirmationAlertController() {
+        
+        let alertController = UIAlertController(title: nil, message: "Delete Post?", preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (UIAlertAction) in
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

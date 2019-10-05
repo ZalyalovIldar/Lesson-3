@@ -2,6 +2,21 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    /*
+     
+     TODO:
+        Динамический размер ячейки от контента
+        refresherControl (Чисто для красоты)
+        Action Sheets по тз
+        Добавление поста
+            Добавление фоток
+                Фотки с камеры
+                Фотки с галлереи
+            Добавление текста
+        (Опционально) Переделать панельку с фотками на главной странице
+     
+     */
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
