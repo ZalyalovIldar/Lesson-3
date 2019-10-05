@@ -3,12 +3,16 @@ import UIKit
 class PostsTableViewController: UITableViewController {
     
     var posts: [Post] = []
+    var postIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupCells()
+        posts = Post.generateSomePosts()
     }
+    
+    
     
     func setupCells() {
         
@@ -24,6 +28,8 @@ class PostsTableViewController: UITableViewController {
         let nibPostTableViewCell = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(nibPostTableViewCell, forCellReuseIdentifier: "postCell")
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -35,7 +41,7 @@ class PostsTableViewController: UITableViewController {
         
         switch section {
         case 4:
-            return 2
+            return posts.count
         default:
             return 1
         }
@@ -59,6 +65,7 @@ class PostsTableViewController: UITableViewController {
             
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+            cell.configureCell(for: posts[indexPath.row])
             return cell
         
         default:
@@ -97,7 +104,7 @@ class PostsTableViewController: UITableViewController {
             return 60
             
         case 4:
-            return 150
+            return 500
             
         default:
             return 0
@@ -107,11 +114,19 @@ class PostsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 4 {
+            
+            postIndex = indexPath.row
             performSegue(withIdentifier: "showPostInfoSegue", sender: self)
         }
         if indexPath.section == 3 {
             performSegue(withIdentifier: "addPostSegue", sender: self)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if let segueDestination = segue.destination as? DetailedPostTableViewController {
+            segueDestination.post = posts[postIndex]
+        }
     }
 }

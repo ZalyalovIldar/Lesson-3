@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		427897CD2348F6AD00F6DE57 /* DetailedPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427897CC2348F6AD00F6DE57 /* DetailedPostTableViewController.swift */; };
 		42B57C6A23461FDA00635A45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C6923461FDA00635A45 /* AppDelegate.swift */; };
 		42B57C6C23461FDA00635A45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C6B23461FDA00635A45 /* SceneDelegate.swift */; };
 		42B57C7123461FDA00635A45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B57C6F23461FDA00635A45 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		427897CC2348F6AD00F6DE57 /* DetailedPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPostTableViewController.swift; sourceTree = "<group>"; };
 		42B57C6623461FDA00635A45 /* vkProfilePage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkProfilePage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B57C6923461FDA00635A45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42B57C6B23461FDA00635A45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				42B57C7D2346271E00635A45 /* PostsTableViewController.swift */,
+				427897CC2348F6AD00F6DE57 /* DetailedPostTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42B57C8E2346291500635A45 /* PostTableViewCell.swift in Sources */,
+				427897CD2348F6AD00F6DE57 /* DetailedPostTableViewController.swift in Sources */,
 				42B57C85234628B000635A45 /* UserInfoTableViewCell.swift in Sources */,
 				42B57C7E2346271E00635A45 /* PostsTableViewController.swift in Sources */,
 				42B57C6A23461FDA00635A45 /* AppDelegate.swift in Sources */,
