@@ -112,6 +112,8 @@ class FullPostViewController: UIViewController, PostEditDelegate {
         else {
             postTextLabel.isHidden = true
         }
+        
+        postEditDelegate?.saveButtonPressed(on: post, new: new)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -119,7 +121,7 @@ class FullPostViewController: UIViewController, PostEditDelegate {
         if segue.identifier == editingViewSegueId {
             
             let destVC = segue.destination as! PostEditingViewController
-            destVC.configure(with: post, postEditMainDelegate: postEditDelegate, postEditDetailsDelegate: self)
+            destVC.configure(with: post, postEditDelegate: self)
         }
     }
 }

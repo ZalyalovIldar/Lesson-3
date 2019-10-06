@@ -14,14 +14,12 @@ class PostEditingViewController: UIViewController {
     
     var post: Post!
     
-    weak var postEditMainDelegate: PostEditDelegate?
-    weak var postEditDetailsDelegate: PostEditDelegate?
+    weak var postEditDelegate: PostEditDelegate?
     
-    func configure(with post: Post, postEditMainDelegate: PostEditDelegate?, postEditDetailsDelegate: PostEditDelegate?) {
+    func configure(with post: Post, postEditDelegate: PostEditDelegate?) {
         
         self.post = post
-        self.postEditMainDelegate = postEditMainDelegate
-        self.postEditDetailsDelegate = postEditDetailsDelegate
+        self.postEditDelegate = postEditDelegate
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,8 +39,7 @@ class PostEditingViewController: UIViewController {
         
         let newPost = Post(text: newText, imageName: post.imageName)
         
-        postEditMainDelegate?.saveButtonPressed(on: post, new: newPost)
-        postEditDetailsDelegate?.saveButtonPressed(on: post, new: newPost)
+        postEditDelegate?.saveButtonPressed(on: post, new: newPost)
         dismiss(animated: true)
     }
 }
