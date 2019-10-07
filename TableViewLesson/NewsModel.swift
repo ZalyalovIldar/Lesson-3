@@ -10,12 +10,17 @@ import Foundation
 
 struct NewsModel {
     
+    static var idCounter = 0
+    
     var text : String?
     var imageName : String?
+    let id : Int
     
     init(newsText : String?, newsImageName : String?) {
         
         self.text = newsText
         self.imageName = newsImageName
+        self.id = NewsModel.idCounter
+        NewsModel.idCounter += 1
     }
 }

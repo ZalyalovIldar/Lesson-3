@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomTableViewCellWithImage: UITableViewCell, CustomCell {
-
+    
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var avatarImageView: UIImageView!
     

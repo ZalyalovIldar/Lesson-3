@@ -8,17 +8,25 @@
 
 import UIKit
 
-class CustomTableViewCellWithTextAndImage: UITableViewCell {
+class CustomTableViewCellWithTextAndImage: UITableViewCell, CustomCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var newsLabel: UILabel!
+    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    
+    func configure(with model: NewsModel) {
+        
+        newsLabel.text = model.text
+        newsImageView.image = UIImage(named: model.imageName!)
+        avatarImageView.layer.cornerRadius = avatarImageView.bounds.height / 2
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    static func cellNib() -> UINib? {
+        return UINib(nibName: String(describing: self), bundle: nil)
+    }
+    
+    static func cellIdentifier() -> String {
+        return String(describing: self)
     }
     
 }

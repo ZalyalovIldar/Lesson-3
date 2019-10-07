@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
+protocol CustomCell {
+    
+    static func cellNib() -> UINib?
+    static func cellIdentifier() -> String
+}

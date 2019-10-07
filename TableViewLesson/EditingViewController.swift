@@ -9,13 +9,14 @@
 import UIKit
 
 class EditingViewController: UIViewController {
-
+    
     var news: NewsModel!
     weak var delegate: DetailsViewControllerDelegate?
     
     @IBAction func saveButtonPressed(_ sender: Any) {
+        
         news.text = textEditingTextView.text
-        delegate?.didChangeNews(news)
+        delegate?.didChangeNewsOnDetailController(news)
         navigationController?.popViewController(animated: true)
     }
     
@@ -25,6 +26,5 @@ class EditingViewController: UIViewController {
         super.viewDidLoad()
         
         textEditingTextView.text = news.text
-        print("!")
     }   
 }

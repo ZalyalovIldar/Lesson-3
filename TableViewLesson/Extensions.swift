@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+extension UITableView {
+    
+    func registerCustomCell(_ cell: CustomCell.Type) {
+        
+        self.register(cell.cellNib(), forCellReuseIdentifier: cell.cellIdentifier())
+    }
+}

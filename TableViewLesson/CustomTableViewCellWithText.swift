@@ -9,13 +9,14 @@
 import UIKit
 
 class CustomTableViewCellWithText: UITableViewCell, CustomCell {
-
+    
     @IBOutlet weak var newsLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     
     func configure(with model: NewsModel) {
         
         newsLabel.text = model.text
+        newsLabel.sizeToFit()
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.height / 2
     }
     
