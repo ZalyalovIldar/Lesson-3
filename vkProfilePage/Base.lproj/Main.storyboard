@@ -32,10 +32,10 @@
             </objects>
             <point key="canvasLocation" x="31.884057971014496" y="135.32608695652175"/>
         </scene>
-        <!--View Controller-->
+        <!--Post Editing View Controller-->
         <scene sceneID="5YS-ZF-qNb">
             <objects>
-                <viewController id="8gw-I4-uFf" sceneMemberID="viewController">
+                <viewController id="8gw-I4-uFf" customClass="PostEditingViewController" customModule="vkProfilePage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Yh-FX-lyp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,33 +44,40 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="Nikita" id="WNL-pg-IgA">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="rDq-C5-taY"/>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="JMt-8N-GsN"/>
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="rDq-C5-taY">
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="8gw-I4-uFf" id="p1u-Al-ZcC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="JMt-8N-GsN">
+                                            <connections>
+                                                <action selector="doneButtonPressed:" destination="8gw-I4-uFf" id="YKG-pt-KEf"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PDd-6H-z2U">
-                                <rect key="frame" x="20" y="66" width="374" height="570"/>
+                                <rect key="frame" x="20" y="66" width="374" height="583"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqw-FS-8tk">
-                                <rect key="frame" x="20" y="657.66666666666663" width="50" height="37.333333333333371"/>
+                                <rect key="frame" x="20" y="670.66666666666663" width="35" height="24.333333333333371"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="8LR-3n-cCv"/>
-                                    <constraint firstAttribute="height" constant="40" id="hda-uk-2kp"/>
+                                    <constraint firstAttribute="width" constant="35" id="8LR-3n-cCv"/>
+                                    <constraint firstAttribute="height" constant="27" id="hda-uk-2kp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                 <state key="normal" backgroundImage="photo" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYC-Gk-VbQ">
-                                <rect key="frame" x="95" y="657" width="50" height="38"/>
+                                <rect key="frame" x="80" y="670" width="35" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="CKI-iP-4lR"/>
-                                    <constraint firstAttribute="width" constant="50" id="NXh-20-VTc"/>
+                                    <constraint firstAttribute="height" constant="27" id="CKI-iP-4lR"/>
+                                    <constraint firstAttribute="width" constant="35" id="NXh-20-VTc"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="camera" catalog="system"/>
                             </button>
@@ -91,10 +98,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MJI-IV-40r"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="PDd-6H-z2U" id="o9P-4C-Udh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLR-65-iBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895.6521739130435" y="935.86956521739137"/>
+            <point key="canvasLocation" x="1945" y="905"/>
         </scene>
         <!--Nikita-->
         <scene sceneID="VNN-Cg-iS8">
@@ -122,7 +132,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Nikita" id="xWZ-fZ-Mky"/>
                     <connections>
-                        <segue destination="8gw-I4-uFf" kind="presentation" identifier="addPostSegue" id="90p-0G-NLF"/>
                         <segue destination="Njo-Xf-f5v" kind="show" identifier="showPostInfoSegue" id="Pkf-h3-WPH"/>
                     </connections>
                 </tableViewController>
@@ -156,7 +165,7 @@
                     <navigationItem key="navigationItem" title="Post" id="pZJ-oM-T7u">
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="t1F-5j-JL0">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YKF-IJ-73L">
-                                <rect key="frame" x="354" y="15" width="30" height="9"/>
+                                <rect key="frame" x="364" y="17.666666666666668" width="30" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" backgroundImage="ellipsis" catalog="system">
@@ -169,10 +178,13 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="8gw-I4-uFf" kind="presentation" identifier="editPostSegue" id="fiI-ZA-hko"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cd-o6-jpo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821.7391304347827" y="134.5108695652174"/>
+            <point key="canvasLocation" x="1945" y="135"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		425EC098234A1FDC00204D9F /* PostEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425EC097234A1FDC00204D9F /* PostEditingViewController.swift */; };
 		427897CD2348F6AD00F6DE57 /* DetailedPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427897CC2348F6AD00F6DE57 /* DetailedPostTableViewController.swift */; };
 		42B57C6A23461FDA00635A45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C6923461FDA00635A45 /* AppDelegate.swift */; };
 		42B57C6C23461FDA00635A45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B57C6B23461FDA00635A45 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		425EC097234A1FDC00204D9F /* PostEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditingViewController.swift; sourceTree = "<group>"; };
 		427897CC2348F6AD00F6DE57 /* DetailedPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPostTableViewController.swift; sourceTree = "<group>"; };
 		42B57C6623461FDA00635A45 /* vkProfilePage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkProfilePage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B57C6923461FDA00635A45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				42B57C7D2346271E00635A45 /* PostsTableViewController.swift */,
 				427897CC2348F6AD00F6DE57 /* DetailedPostTableViewController.swift */,
+				425EC097234A1FDC00204D9F /* PostEditingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				42B57C6A23461FDA00635A45 /* AppDelegate.swift in Sources */,
 				42B57C9223462A4300635A45 /* PhotosTableViewCell.swift in Sources */,
 				42B57C6C23461FDA00635A45 /* SceneDelegate.swift in Sources */,
+				425EC098234A1FDC00204D9F /* PostEditingViewController.swift in Sources */,
 				42B57C80234627DA00635A45 /* Post.swift in Sources */,
 				42B57C8A2346290400635A45 /* AddPostTableViewCell.swift in Sources */,
 			);

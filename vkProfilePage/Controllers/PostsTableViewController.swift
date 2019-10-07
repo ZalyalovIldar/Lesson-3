@@ -9,10 +9,14 @@ class PostsTableViewController: UITableViewController {
         super.viewDidLoad()
 
         setupCells()
-        posts = Post.generateSomePosts()
+        Post.posts = Post.generateSomePosts()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        posts = Post.posts
+        tableView.reloadData()
+    }
     
     func setupCells() {
         
@@ -28,8 +32,6 @@ class PostsTableViewController: UITableViewController {
         let nibPostTableViewCell = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(nibPostTableViewCell, forCellReuseIdentifier: "postCell")
     }
-    
-    
 
     // MARK: - Table view data source
 
@@ -75,9 +77,7 @@ class PostsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         switch section {
-        case 0:
-            return 0
-
+            
         case 1:
             return 1
 
@@ -114,12 +114,8 @@ class PostsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 4 {
-            
             postIndex = indexPath.row
             performSegue(withIdentifier: "showPostInfoSegue", sender: self)
-        }
-        if indexPath.section == 3 {
-            performSegue(withIdentifier: "addPostSegue", sender: self)
         }
     }
     
