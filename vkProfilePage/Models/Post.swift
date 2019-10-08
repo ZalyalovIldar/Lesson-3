@@ -11,13 +11,31 @@ class Post {
     static var posts: [Post] = []
     
     static func generateSomePosts() -> [Post] {
+
+        let hugeText =
+"""
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+"""
+        let post1 = Post(postDate: Date(), image: nil, text: "Текст без изображения")
+        let post2 = Post(postDate: Date(), image: UIImage(named: "imageWithoutText"), text: nil)
+        let post3 = Post(postDate: Date(), image: nil, text: hugeText)
+        var posts = [post1, post2, post3]
         
-        let post1 = Post(postDate: Date(), image: nil, text: nil)
-        let post2 = Post(postDate: Date(), image: UIImage(named: "examplePhoto2"), text: "TEST 2")
-        let post3 = Post(postDate: Date(), image: UIImage(named: "user3"), text: "TEST 3")
-        let post4 = Post(postDate: Date(), image: UIImage(named: "photo1"), text: "TEST 4")
+        for i in 1...10 {
+            let newPost = Post(postDate: Date(), image: UIImage(named: "examplePhoto\(i)"), text: nil)
+            posts.append(newPost)
+        }
         
-        return [post1, post2, post3, post4]
+        return posts
     }
     
     static func changePost(with UUID: String, for newPost: Post) {

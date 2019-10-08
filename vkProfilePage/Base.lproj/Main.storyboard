@@ -165,11 +165,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Post" id="pZJ-oM-T7u">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="t1F-5j-JL0">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YKF-IJ-73L">
-                                <rect key="frame" x="364" y="17.666666666666664" width="0.0" height="32"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YKF-IJ-73L">
+                                <rect key="frame" x="364" y="17.666666666666664" width="40" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="ellipsis" catalog="system">
+                                <state key="normal" backgroundImage="ellipsis" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>

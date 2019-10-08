@@ -16,14 +16,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo2" translatesAutoresizingMaskIntoConstraints="NO" id="MaM-Vt-uGK">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="examplePhoto10" translatesAutoresizingMaskIntoConstraints="NO" id="MaM-Vt-uGK">
                         <rect key="frame" x="124" y="7.5" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="JPK-pH-EWH"/>
                             <constraint firstAttribute="height" constant="100" id="lhB-ob-zpf"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="aLf-Al-ICK">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="examplePhoto4" translatesAutoresizingMaskIntoConstraints="NO" id="aLf-Al-ICK">
                         <rect key="frame" x="8" y="7.5" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="TwJ-fa-mFF"/>
@@ -43,7 +43,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="photo1" width="1024" height="768"/>
-        <image name="photo2" width="1200" height="800"/>
+        <image name="examplePhoto10" width="1079" height="1080"/>
+        <image name="examplePhoto4" width="1200" height="800"/>
     </resources>
 </document>

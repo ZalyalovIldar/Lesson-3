@@ -8,8 +8,6 @@ class PostsTableViewController: UITableViewController {
         super.viewDidLoad()
 
         setupCells()
-        //tableView.estimatedRowHeight = 50
-        //tableView.rowHeight = UITableView.automaticDimension
         Post.posts = Post.generateSomePosts()
     }
     
