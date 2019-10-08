@@ -12,5 +12,4 @@ class UserInfoTableViewCell: UITableViewCell {
         editProfileButton.layer.cornerRadius = editProfileButton.frame.height / 2
         self.selectionStyle = .none
     }
-    
 }

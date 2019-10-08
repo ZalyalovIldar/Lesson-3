@@ -15,6 +15,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RSy-ZA-C68">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.33013606071472168" green="0.45957094430923462" blue="0.64315974712371826" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLR-65-iBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="905"/>
+            <point key="canvasLocation" x="1803" y="912"/>
         </scene>
         <!--Nikita-->
         <scene sceneID="VNN-Cg-iS8">
@@ -163,12 +164,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Post" id="pZJ-oM-T7u">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="t1F-5j-JL0">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YKF-IJ-73L">
-                                <rect key="frame" x="364" y="17.666666666666668" width="30" height="9"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="t1F-5j-JL0">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YKF-IJ-73L">
+                                <rect key="frame" x="364" y="17.666666666666664" width="0.0" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" backgroundImage="ellipsis" catalog="system">
+                                <state key="normal" image="ellipsis" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -184,7 +185,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cd-o6-jpo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="135"/>
+            <point key="canvasLocation" x="1803" y="135"/>
         </scene>
     </scenes>
     <resources>

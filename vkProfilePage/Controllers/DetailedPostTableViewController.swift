@@ -72,11 +72,12 @@ class DetailedPostTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
         cell.configureCell(for: post)
+        cell.postText.numberOfLines = .max
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 500
+        return UITableView.automaticDimension
     }
     
     func setupTableView() {
@@ -86,6 +87,7 @@ class DetailedPostTableViewController: UITableViewController {
 }
 
 //MARK: - Delegate
+
 extension DetailedPostTableViewController: dataPassingDelegate {
     
     func changePost(for post: Post) {
