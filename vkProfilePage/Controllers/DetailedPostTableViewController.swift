@@ -83,6 +83,8 @@ class DetailedPostTableViewController: UITableViewController {
     func setupTableView() {
         let nibCell = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(nibCell, forCellReuseIdentifier: "postCell")
+        
+        tableView.tableFooterView = UIView(frame: .zero)
     }
 }
 

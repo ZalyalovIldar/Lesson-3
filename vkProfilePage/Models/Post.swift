@@ -12,7 +12,7 @@ class Post {
     
     static func generateSomePosts() -> [Post] {
         
-        let post1 = Post(postDate: Date(), image: UIImage(named: "examplePhoto1"), text: "TEST 1")
+        let post1 = Post(postDate: Date(), image: nil, text: nil)
         let post2 = Post(postDate: Date(), image: UIImage(named: "examplePhoto2"), text: "TEST 2")
         let post3 = Post(postDate: Date(), image: UIImage(named: "user3"), text: "TEST 3")
         let post4 = Post(postDate: Date(), image: UIImage(named: "photo1"), text: "TEST 4")

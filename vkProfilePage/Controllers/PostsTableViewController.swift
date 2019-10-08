@@ -8,8 +8,9 @@ class PostsTableViewController: UITableViewController {
         super.viewDidLoad()
 
         setupCells()
+        //tableView.estimatedRowHeight = 50
+        //tableView.rowHeight = UITableView.automaticDimension
         Post.posts = Post.generateSomePosts()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,10 +94,10 @@ class PostsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+
         if indexPath.section == 1 { return 115 }
         if indexPath.section == 2 { return 60 }
-        
+
         return UITableView.automaticDimension
     }
 
