@@ -15,6 +15,11 @@ class FullPostViewController: UIViewController, PostEditDelegate {
     @IBOutlet weak var avatarImageView: UIImageView!
     
     let editingViewSegueId = "showEditingViewSegue"
+    let deleteActionTitle = "Удаление поста"
+    let deleteActionMessage = "Вы уверены, что хотите продолжить?"
+    let deleteActionButtonTitle = "Удалить"
+    let cancelActionButtonTitle = "Отмена"
+    let editActionButtonTitle = "Редактировать"
     
     var post: Post!
     
@@ -58,17 +63,17 @@ class FullPostViewController: UIViewController, PostEditDelegate {
         
         let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-        let cancelActionButton = UIAlertAction(title: "Отмена", style: .cancel)
+        let cancelActionButton = UIAlertAction(title: cancelActionButtonTitle, style: .cancel)
         
         actionSheetController.addAction(cancelActionButton)
 
-        let saveActionButton = UIAlertAction(title: "Редактировать", style: .default) { action -> Void in
+        let saveActionButton = UIAlertAction(title: editActionButtonTitle, style: .default) { action -> Void in
             self.performSegue(withIdentifier: self.editingViewSegueId, sender: self)
         }
         
         actionSheetController.addAction(saveActionButton)
 
-        let deleteActionButton = UIAlertAction(title: "Удалить", style: .destructive) { action -> Void in
+        let deleteActionButton = UIAlertAction(title: deleteActionButtonTitle, style: .destructive) { action -> Void in
             self.showDeletionActionSheet()
         }
         
@@ -79,13 +84,13 @@ class FullPostViewController: UIViewController, PostEditDelegate {
     
     func showDeletionActionSheet() {
         
-        let actionSheetController = UIAlertController(title: "Удаление поста", message: "Вы уверены, что хотите продолжить?", preferredStyle: .actionSheet)
+       let actionSheetController = UIAlertController(title: deleteActionTitle, message: deleteActionMessage, preferredStyle: .actionSheet)
 
-        let cancelActionButton = UIAlertAction(title: "Отмена", style: .cancel)
+        let cancelActionButton = UIAlertAction(title: cancelActionButtonTitle, style: .cancel)
         
         actionSheetController.addAction(cancelActionButton)
 
-        let deleteActionButton = UIAlertAction(title: "Удалить", style: .destructive) { action -> Void in
+        let deleteActionButton = UIAlertAction(title: deleteActionButtonTitle, style: .destructive) { action -> Void in
             
             self.postDeleteDelegate?.deleteButtonPressed(on: self.post)
             self.navigationController?.popViewController(animated: true)
