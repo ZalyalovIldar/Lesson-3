@@ -14,5 +14,7 @@ class PostTableViewCell: UITableViewCell {
         
         postText.text = post.text
         postImage.image = post.image
+        
+        postText.numberOfLines = .max
     }
 }

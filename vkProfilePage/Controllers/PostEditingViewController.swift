@@ -3,7 +3,7 @@ import UIKit
 class PostEditingViewController: UIViewController {
     
     var post: Post!
-    var delegate: dataPassingDelegate!
+    weak var delegate: DataPassingDelegate!
     
     @IBOutlet weak var textView: UITextView!
     
@@ -24,8 +24,7 @@ class PostEditingViewController: UIViewController {
     }
 }
 
-protocol dataPassingDelegate {
+protocol DataPassingDelegate: AnyObject {
     
     func changePost(for post: Post)
-
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NtA-pX-ti4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NtA-pX-ti4">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,7 +66,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqw-FS-8tk">
-                                <rect key="frame" x="20" y="670.66666666666663" width="35" height="24.333333333333371"/>
+                                <rect key="frame" x="20" y="670.66666666666663" width="35" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="8LR-3n-cCv"/>
                                     <constraint firstAttribute="height" constant="27" id="hda-uk-2kp"/>
@@ -75,7 +75,7 @@
                                 <state key="normal" backgroundImage="photo" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYC-Gk-VbQ">
-                                <rect key="frame" x="80" y="670" width="35" height="25"/>
+                                <rect key="frame" x="80" y="670" width="35" height="24.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="CKI-iP-4lR"/>
                                     <constraint firstAttribute="width" constant="35" id="NXh-20-VTc"/>
@@ -164,19 +164,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Post" id="pZJ-oM-T7u">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="t1F-5j-JL0">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YKF-IJ-73L">
-                                <rect key="frame" x="364" y="17.666666666666664" width="40" height="12"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" backgroundImage="ellipsis" catalog="system">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="optionsButtonPressed:" destination="Njo-Xf-f5v" eventType="touchUpInside" id="b79-JU-LSb"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" id="9V5-I4-1eB">
+                            <connections>
+                                <action selector="optionsButtonPressed:" destination="Njo-Xf-f5v" id="ucP-oe-P1a"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -190,7 +181,8 @@
     </scenes>
     <resources>
         <image name="camera" catalog="system" width="64" height="48"/>
-        <image name="ellipsis" catalog="system" width="64" height="20"/>
-        <image name="photo" catalog="system" width="64" height="48"/>
+        <image name="ellipsis" catalog="system" width="64" height="18"/>
+        <image name="photo" catalog="system" width="64" height="46"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

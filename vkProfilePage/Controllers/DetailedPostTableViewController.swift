@@ -3,6 +3,13 @@ import UIKit
 class DetailedPostTableViewController: UITableViewController {
     
     var post: Post!
+    
+    let editPostSegue = "editPostSegue"
+    let editActionTitle = "Edit"
+    let deleteActionTitle = "Delete"
+    let cancelActionTitle = "Cancel"
+    let deletionConfirmationAlertControllerMessage = "Delete Post?"
+    let cellIdentifier = "postCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +27,13 @@ class DetailedPostTableViewController: UITableViewController {
         
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let editAction = UIAlertAction(title: "Edit", style: .default) { (UIAlertAction) in
-            self.performSegue(withIdentifier: "editPostSegue", sender: self)
+        let editAction = UIAlertAction(title: editActionTitle, style: .default) { (UIAlertAction) in
+            self.performSegue(withIdentifier: self.editPostSegue, sender: self)
         }
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (UIAlertAction) in
+        let deleteAction = UIAlertAction(title: deleteActionTitle, style: .destructive) { (UIAlertAction) in
             self.presentDeletionConfirmationAlertController()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: cancelActionTitle, style: .cancel, handler: nil)
         
         alertController.addAction(editAction)
         alertController.addAction(deleteAction)
@@ -37,14 +44,14 @@ class DetailedPostTableViewController: UITableViewController {
     
     func presentDeletionConfirmationAlertController() {
         
-        let alertController = UIAlertController(title: nil, message: "Delete Post?", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: nil, message: deletionConfirmationAlertControllerMessage, preferredStyle: .actionSheet)
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (UIAlertAction) in
+        let deleteAction = UIAlertAction(title: deleteActionTitle, style: .destructive) { (UIAlertAction) in
             
             Post.removePost(with: self.post.postID)
             self.navigationController?.popViewController(animated: true)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: cancelActionTitle, style: .cancel, handler: nil)
         
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
@@ -70,9 +77,8 @@ class DetailedPostTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
         cell.configureCell(for: post)
-        cell.postText.numberOfLines = .max
         return cell
     }
     
@@ -90,7 +96,7 @@ class DetailedPostTableViewController: UITableViewController {
 
 //MARK: - Delegate
 
-extension DetailedPostTableViewController: dataPassingDelegate {
+extension DetailedPostTableViewController: DataPassingDelegate {
     
     func changePost(for post: Post) {
         

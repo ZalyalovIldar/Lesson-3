@@ -2,6 +2,14 @@ import UIKit
 
 class PostsTableViewController: UITableViewController {
     
+    let numberOfSections = 4
+    let heightForFooterInSection0 = CGFloat(1)
+    let heightForFooterInSection1 = CGFloat(8)
+    let heightForFooterInSection2 = CGFloat(8)
+    let heightForRowAtSection1 = CGFloat(115)
+    let heightForRowAtSection2 = CGFloat(60)
+    let showPostInfoSegue = "showPostInfoSegue"
+    
     var posts: [Post] = []
 
     override func viewDidLoad() {
@@ -12,6 +20,7 @@ class PostsTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         posts = Post.posts
         tableView.reloadData()
@@ -35,7 +44,7 @@ class PostsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return numberOfSections
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,13 +87,13 @@ class PostsTableViewController: UITableViewController {
         switch section {
             
         case 0:
-            return 1
+            return heightForFooterInSection0
 
         case 1:
-            return 8
+            return heightForFooterInSection1
             
         case 2:
-            return 8
+            return heightForFooterInSection2
             
         default:
             return 0
@@ -93,8 +102,8 @@ class PostsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        if indexPath.section == 1 { return 115 }
-        if indexPath.section == 2 { return 60 }
+        if indexPath.section == 1 { return heightForRowAtSection1 }
+        if indexPath.section == 2 { return heightForRowAtSection2 }
 
         return UITableView.automaticDimension
     }
@@ -102,7 +111,7 @@ class PostsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 3 {
-            performSegue(withIdentifier: "showPostInfoSegue", sender: posts[indexPath.row])
+            performSegue(withIdentifier: showPostInfoSegue, sender: posts[indexPath.row])
         }
     }
     
