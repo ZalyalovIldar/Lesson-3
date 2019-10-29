@@ -16,6 +16,8 @@ protocol ViewControllerDelegate: AnyObject {
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ViewControllerDelegate {
     
     let detailSegueIdentifier = "showDetailsSegue"
+    let smallCellHeight: CGFloat = 200
+    let bigCellHeight: CGFloat = 400
     
     var newsArray: [NewsModel] = []
     
@@ -23,7 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         newsArray.append(NewsModel(newsText: "Автор не несет ответственности за достоверность, полноту и качество представленной информации. Претензии к автору в связи с материальным или нематериальным ущербом, причиненным вследствие использования или неиспользования представленной информации, а также использования неверной или неполной информации, не принимаются, за исключением случаев, когда доказана халатность или преступный умысел автора. Представленные предложения не накладывают каких-либо обязательств. Автор оставляет за собой право без предварительного уведомления изменять, удалять или дополнять содержимое.", newsImageName: nil))
         newsArray.append(NewsModel(newsText: "Я уже говорил тебе, что такое безумие? Безумие - это точное повторение одного и того же действия, раз за разом, в надежде на изменение. Это есть безумие. Когда впервые я это услышал, не помню, кто мне это сказал, я - бум - убил его. Смысл в том - окей? - Он был прав. И тогда я стал видеть это везде, везде, куда ни глянь, эти болваны... Куда ни глянь, делают точно одно и то же. Снова и снова и снова и снова и снова, и думают - сейчас все изменится. Не не не не, прошу, сейчас все будет иначе. Прости, мне не нравится, как ты на меня смотришь! Окей? У тебя проблемы с головой? Думаешь, лапшу тебе на уши вешаю?!", newsImageName: "vaas"))
         newsArray.append(NewsModel(newsText: "Not bad :)", newsImageName: "elonmusk"))
@@ -49,26 +51,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if newsArray[indexPath.row].text != nil {
-            if newsArray[indexPath.row].imageName != nil {
-                
-                let cell = newsTableView.dequeueReusableCell(withIdentifier: CustomTableViewCellWithTextAndImage.cellIdentifier(), for: indexPath) as! CustomTableViewCellWithTextAndImage
-                cell.configure(with: newsArray[indexPath.row])
-                self.newsTableView.rowHeight = 400
-                return cell
-            }
-            else {
-                
-                let cell = newsTableView.dequeueReusableCell(withIdentifier: CustomTableViewCellWithText.cellIdentifier(), for: indexPath) as! CustomTableViewCellWithText
-                cell.configure(with: newsArray[indexPath.row])
-                self.newsTableView.rowHeight = 200
-                return cell
-            }
-        } else {
+        guard newsArray[indexPath.row].text != nil else {
             
             let cell = newsTableView.dequeueReusableCell(withIdentifier: CustomTableViewCellWithImage.cellIdentifier(), for: indexPath) as! CustomTableViewCellWithImage
             cell.configure(with: newsArray[indexPath.row])
-            self.newsTableView.rowHeight = 400
+            self.newsTableView.rowHeight = bigCellHeight
+            return cell
+        }
+        
+        if newsArray[indexPath.row].imageName != nil {
+            
+            let cell = newsTableView.dequeueReusableCell(withIdentifier: CustomTableViewCellWithTextAndImage.cellIdentifier(), for: indexPath) as! CustomTableViewCellWithTextAndImage
+            cell.configure(with: newsArray[indexPath.row])
+            self.newsTableView.rowHeight = bigCellHeight
+            return cell
+        }
+        else {
+            
+            let cell = newsTableView.dequeueReusableCell(withIdentifier: CustomTableViewCellWithText.cellIdentifier(), for: indexPath) as! CustomTableViewCellWithText
+            cell.configure(with: newsArray[indexPath.row])
+            self.newsTableView.rowHeight = smallCellHeight
             return cell
         }
     }
@@ -110,4 +112,4 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 
-   
+
