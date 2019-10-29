@@ -34,7 +34,6 @@ class EditViewController: UIViewController {
         
         post.postText = editedText
         
-        postEditDelegate?.doneButtonPressed(on: post)
         dismiss(animated: true)
     }
 }

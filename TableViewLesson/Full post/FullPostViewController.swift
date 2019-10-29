@@ -29,6 +29,7 @@ class FullPostViewController: UIViewController, PostEditDelegate {
         super.viewWillAppear(animated)
         
         configure(with: post)
+        print(post.postId)
     }
     
     func doneButtonPressed(on post: Post) {
@@ -71,7 +72,7 @@ class FullPostViewController: UIViewController, PostEditDelegate {
             
             postImageView.removeFromSuperview()
             
-            let bottomViewTopConstraint = bottomView.topAnchor.constraint(equalTo: postTextLabel.bottomAnchor, constant: 8)
+            let bottomViewTopConstraint = bottomView.topAnchor.constraint(equalTo: postTextLabel.bottomAnchor, constant: Constants.bottomViewTopConstraintConstant)
             
             contentView.addConstraint(bottomViewTopConstraint)
         }
@@ -92,16 +93,16 @@ class FullPostViewController: UIViewController, PostEditDelegate {
         
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let editAction = UIAlertAction(title: "Редактировать", style: .default) { [weak self] editAction in
+        let editAction = UIAlertAction(title: Constants.editActionTitle, style: .default) { [weak self] editAction in
             
             self?.performSegue(withIdentifier: Constants.editPostSegue, sender: self)
         }
         
-        let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { deleteAction in
+        let deleteAction = UIAlertAction(title: Constants.deleteActionTitle, style: .destructive) { deleteAction in
             self.deleteAlert()
         }
         
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: Constants.cancelActionTitle, style: .cancel, handler: nil)
         
         alertController.addAction(editAction)
         alertController.addAction(deleteAction)
@@ -112,15 +113,15 @@ class FullPostViewController: UIViewController, PostEditDelegate {
     
     func deleteAlert() {
         
-        let alertController = UIAlertController(title: "Удалить пост?", message: nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: Constants.deleteActionTitle, message: nil, preferredStyle: .actionSheet)
         
-        let delete = UIAlertAction(title: "Удалить", style: .destructive) { delete in
+        let delete = UIAlertAction(title: Constants.confirmDeleteActionTitle, style: .destructive) { delete in
             
             self.postDeleteDelegate?.deletePostButtonPressed(on: self.post)
             self.navigationController?.popViewController(animated: true)
         }
         
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: Constants.cancelActionTitle, style: .cancel, handler: nil)
         
         alertController.addAction(delete)
         alertController.addAction(cancelAction)
