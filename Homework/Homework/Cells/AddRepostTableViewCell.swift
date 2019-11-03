@@ -18,14 +18,6 @@ class AddRepostTableViewCell: UITableViewCell, CustomCell,  UIImagePickerControl
     
     weak var delegate: AddRepostCellDelegate?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     func configure(with user: User, delegate: AddRepostCellDelegate) {
         
         avatar.image = user.avatar

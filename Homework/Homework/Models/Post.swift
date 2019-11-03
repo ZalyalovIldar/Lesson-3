@@ -11,9 +11,7 @@ import UIKit
 
 class Post {
     
-    static var postCount = 0
-    
-    var id: Int
+    var id: String
     var user: User
     var date: String
     var text: String
@@ -21,12 +19,11 @@ class Post {
     
     init(user: User, date: String, text: String, image: UIImage?) {
         
-        self.id = Post.postCount
+        self.id = UUID().uuidString
         self.user = user
         self.date = date
         self.text = text
         self.image = image
         
-        Post.postCount += 1
     }
 }

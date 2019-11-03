@@ -19,7 +19,6 @@ protocol RepostCellDelegate: AnyObject {
     func didPressAction(for cell: UITableViewCell)
 }
 
-
 class RepostTableViewCell: UITableViewCell, CustomCell {
 
     @IBOutlet weak var avatar: UIImageView!
@@ -35,13 +34,13 @@ class RepostTableViewCell: UITableViewCell, CustomCell {
     weak var delegate: RepostCellDelegate?
     var post: Post!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    let heightOfPostWhenImageNilTextEmpty: CGFloat = 50
+    let heightOfPostWhenImageNil: CGFloat = 150
+    let heightOfPostWhenTextEmpty: CGFloat = 280
+    let heightOfPostWhenAllNotEmpty: CGFloat = 357
+    
+    let heightOfTextEmty: CGFloat = 0
+    let heightOfTextNotEmpty: CGFloat = 106
     
     func configure(with post: Post, delegate: RepostCellDelegate) {
         
@@ -50,24 +49,24 @@ class RepostTableViewCell: UITableViewCell, CustomCell {
         dateOfRepost.text = post.date
         textOfRepost.text = post.text
         imageOfRepost.image = post.image
-    
-        textOfRepost.sizeToFit()
         
+        textOfRepost.sizeToFit()
+            
         if  post.image == nil && post.text == ""  {
-            heightOfStackConstraint.constant = 50
-            heightOfTextConstraint.constant = 0
+            heightOfStackConstraint.constant = heightOfPostWhenImageNilTextEmpty
+            heightOfTextConstraint.constant = heightOfTextEmty
         }
         else if post.image == nil {
-            heightOfStackConstraint.constant = 150
-            heightOfTextConstraint.constant = 106
+            heightOfStackConstraint.constant = heightOfPostWhenImageNil
+            heightOfTextConstraint.constant = heightOfTextNotEmpty
         }
         else if post.text == "" {
-            heightOfTextConstraint.constant = 0
-            heightOfStackConstraint.constant = 280
+            heightOfStackConstraint.constant = heightOfPostWhenTextEmpty
+            heightOfTextConstraint.constant = heightOfTextEmty
         }
         else {
-            heightOfTextConstraint.constant = 106
-            heightOfStackConstraint.constant = 357
+            heightOfStackConstraint.constant = heightOfPostWhenAllNotEmpty
+            heightOfTextConstraint.constant = heightOfTextNotEmpty
         }
         
         self.delegate = delegate

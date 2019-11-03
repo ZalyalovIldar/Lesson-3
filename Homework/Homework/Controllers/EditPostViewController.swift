@@ -24,7 +24,7 @@ class EditPostViewController: UIViewController {
     @IBAction func doneButtonPressed(_ sender: Any) {
         post.text = text.text
         
-        delegate?.didChangeInfo(post, false, false)
+        delegate?.didChangeInfo(post: post, isNewPost: false, forDelete: false)
         navigationController?.popViewController(animated: true)
     }
 }

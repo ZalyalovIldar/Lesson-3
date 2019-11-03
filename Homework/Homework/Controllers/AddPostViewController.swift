@@ -25,7 +25,7 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate,U
     }
     
     func addPost() {
-        delegate?.didChangeInfo( post, true, false)
+        delegate?.didChangeInfo( post: post, isNewPost: true, forDelete: false)
     }
     
     @IBAction func addPostButtonPressed(_ sender: Any) {

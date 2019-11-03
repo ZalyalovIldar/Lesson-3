@@ -15,6 +15,13 @@ class DetailPostViewController: UIViewController, ViewControllerDelegate {
     
     weak var delegate: ViewControllerDelegate?
     var post: Post!
+    
+    let textOfTittleEdit = "Редактировать"
+    let textOfTittleDelete = "Удалить"
+    let textOfTittleDeleteWarning = "Удалить пост?"
+    let textOfTittleCancel = "Отмена"
+    
+    let identifierOfEdit = "editText"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,19 +36,19 @@ class DetailPostViewController: UIViewController, ViewControllerDelegate {
         
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let editText = UIAlertAction(title: "Редактировать", style: .default) { (action) in
-            self.performSegue(withIdentifier: "editText", sender: self.post)
+        let editText = UIAlertAction(title: textOfTittleEdit, style: .default) { (action) in
+            self.performSegue(withIdentifier: self.identifierOfEdit, sender: self.post)
         }
         
-        let deletePost = UIAlertAction(title: "Удалить", style: .destructive) { (action) in
+        let deletePost = UIAlertAction(title: textOfTittleDelete, style: .destructive) { (action) in
         
-            let alertDelete = UIAlertController(title: "Удалить пост?", message: nil, preferredStyle: .actionSheet)
-            let delete = UIAlertAction(title: "Удалить", style: .destructive) { (action) in
+            let alertDelete = UIAlertController(title: self.textOfTittleDeleteWarning, message: nil, preferredStyle: .actionSheet)
+            let delete = UIAlertAction(title: self.textOfTittleDelete, style: .destructive) { (action) in
                 
-                self.delegate?.didChangeInfo(self.post, false, true)
+                self.delegate?.didChangeInfo(post: self.post, isNewPost: false, forDelete: true)
                 self.navigationController?.popViewController(animated: true)
             }
-            let cancelDelete = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
+            let cancelDelete = UIAlertAction(title: self.textOfTittleCancel, style: .cancel) { (action) in
                 
             }
             
@@ -51,7 +58,7 @@ class DetailPostViewController: UIViewController, ViewControllerDelegate {
             self.present(alertDelete, animated: true, completion: nil)
         }
         
-        let cancel = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
+        let cancel = UIAlertAction(title: textOfTittleCancel, style: .cancel) { (action) in
             self.navigationController?.popViewController(animated: true)
         }
         
@@ -61,14 +68,14 @@ class DetailPostViewController: UIViewController, ViewControllerDelegate {
         present(alert, animated: true, completion: nil)
     }
     
-    func didChangeInfo(_ post: Post, _ isNewPost: Bool, _ forDelete: Bool) {
+    func didChangeInfo(post: Post, isNewPost: Bool, forDelete: Bool) {
         textOfPost.text = post.text
-        delegate?.didChangeInfo(post, false, false)
+        delegate?.didChangeInfo(post: post, isNewPost: false, forDelete: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "editText", let post = sender as? Post {
+        if segue.identifier == identifierOfEdit, let post = sender as? Post {
             
             let destController = segue.destination as! EditPostViewController
             

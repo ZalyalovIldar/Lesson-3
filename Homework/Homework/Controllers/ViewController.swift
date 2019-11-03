@@ -9,10 +9,11 @@
 import UIKit
 
 protocol ViewControllerDelegate: AnyObject {
-    func didChangeInfo(_ post: Post, _ isNewPost: Bool, _ forDelete: Bool)
+    func didChangeInfo(post: Post, isNewPost: Bool, forDelete: Bool)
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddRepostCellDelegate, RepostCellDelegate, ViewControllerDelegate {
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,6 +22,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var row = 2
     var user = User(name: "Roma Shurkin", avatar: #imageLiteral(resourceName: "ava"))
     var posts = [Post]()
+    
+    let identifierOfDetailPost = "detailPost"
+    let identifierOfAddPost = "addPost"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return row
+        return posts.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,36 +62,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let newPost = posts[index]
             
             cell.configure(with: newPost, delegate: self)
-            cell.sizeToFit()
 
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row != 0 {
-            
-            self.tableView.deselectRow(at: indexPath, animated: true)
-            let post = posts[posts.count - indexPath.row]
-            performSegue(withIdentifier: "detailPost", sender: post)
+        guard indexPath.row != 0 else {
+            return
         }
+        
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        let post = posts[posts.count - indexPath.row]
+        performSegue(withIdentifier: identifierOfDetailPost, sender: post)
     }
     
     
     func didPressAction(for cell: UITableViewCell) {
-        performSegue(withIdentifier: "addPost", sender: user)
+        performSegue(withIdentifier: identifierOfAddPost, sender: user)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "addPost", let user = sender as? User {
+        if segue.identifier == identifierOfAddPost, let user = sender as? User {
             
             let destController = segue.destination as! AddPostViewController
             
             destController.post = Post(user: user, date: "", text: "", image: nil)
             destController.delegate = self
         }
-        else if segue.identifier == "detailPost", let post = sender as? Post{
+        else if segue.identifier == identifierOfDetailPost, let post = sender as? Post {
             
             let destController = segue.destination as! DetailPostViewController
             
@@ -96,27 +100,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func didChangeInfo(_ post: Post, _ isNewPost: Bool, _ forDelete: Bool) {
+    func didChangeInfo(post: Post, isNewPost: Bool, forDelete: Bool) {
         
         if isNewPost {
             posts.append(post)
-            row = posts.count + 1
         }
         else if forDelete {
-            let index = post.id
-            print(index)
-            posts.remove(at: index)
             
-            var k = index + 1
-            for post in posts {
-                if post.id == k {
-                    post.id -= 1
-                    k += 1
-                }
-            }
-            
-            Post.postCount -= 1
-            row -= 1
+            posts = posts.filter { $0.id != post.id}
         }
         
         tableView.reloadData()
